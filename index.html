@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gelo & Celly's Wedding</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Monsieur+La+Doulaise&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="container nav-container">
+        <!-- <a href="#" class="logo">Gelo & Celly</a> -->
+        <ul class="nav-links">
+          <li><a href="#our-story">Our Story</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#entourage">Entourage</a></li>
+          <li><a href="#wedding-details">Wedding Details</a></li>
+          <li><a href="#events">Events</a></li>
+
+          <!-- <li><a href="#rsvp">RSVP</a></li> -->
+        </ul>
+        <div class="burger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Parallax -->
+
+    <div class="centered-content">
+      <h1 class="couple-name">Angelo & Celly</h1>
+      <div class="wedding-date">December 26, 2025</div>
+      <div class="countdown-container">
+        <div class="countdown">
+          <div class="countdown-item">
+            <span class="countdown-number" id="days">00</span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="hours">00</span>
+            <span class="countdown-label">Hours</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="minutes">00</span>
+            <span class="countdown-label">Minutes</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="seconds">00</span>
+            <span class="countdown-label">Seconds</span>
+          </div>
+        </div>
+        <!-- RSVP Button -->
+        <button class="rsvp-button">RSVP Now</button>
+      </div>
+    </div>
+
+    <!-- Hero Carousel Section -->
+    <section class="hero-carousel">
+      <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div
+          class="carousel-item active"
+          style="
+            background-image: url('images/IMG_E9498.jpg');
+            background-position: 50% 90%;
+          "
+        ></div>
+
+        <!-- Slide 2 -->
+        <div
+          class="carousel-item"
+          style="background-image: url('images/IMG_4181_edited.jpg')"
+        ></div>
+
+        <!-- Slide 3 -->
+        <div
+          class="carousel-item"
+          style="background-image: url('images/IMG_2245.JPG')"
+        ></div>
+      </div>
+
+      <!-- Carousel Controls -->
+      <div class="carousel-control prev" onclick="prevSlide()">
+        <i class="fas fa-chevron-left"></i>
+      </div>
+      <div class="carousel-control next" onclick="nextSlide()">
+        <i class="fas fa-chevron-right"></i>
+      </div>
+
+      <!-- Carousel Indicators -->
+      <div class="carousel-indicators">
+        <div class="indicator active" onclick="goToSlide(0)"></div>
+        <div class="indicator" onclick="goToSlide(1)"></div>
+        <div class="indicator" onclick="goToSlide(2)"></div>
+      </div>
+    </section>
+
+    <!-- Our Story -->
+    <section id="our-story" class="section">
+      <div class="container">
+        <h2 class="section-title">Our Story</h2>
+        <div class="timeline">
+          <div class="timeline-item left">
+            <div class="timeline-content">
+              <h3>First Meeting</h3>
+              <p>December 2020</p>
+              <img
+                src="images/first_meet.jpeg"
+                alt="First Meeting"
+                class="timeline-img"
+              />
+              <p>We met through a mutual friend.</p>
+            </div>
+          </div>
+          <div class="timeline-item right">
+            <div class="timeline-content">
+              <h3>First Date</h3>
+              <p>January 2021</p>
+              <img
+                src="images/first_date.jpg"
+                alt="First Date"
+                class="timeline-img"
+              />
+              <p>
+                Our first date was at a cozy Italian restaurant downtown. We
+                talked for hours and closed the place down.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item left">
+            <div class="timeline-content">
+              <h3>Our Adventures</h3>
+              <p>May 2022</p>
+              <img
+                src="images/adventures.jpg"
+                alt="Adventures"
+                class="timeline-img"
+              />
+              <p>
+                After two years of dating, we decided to take the next step and
+                moved into our first apartment together.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item right">
+            <div class="timeline-content">
+              <h3>The Proposal</h3>
+              <p>January 2024</p>
+              <img
+                src="images/IMG_E9711.jpg"
+                alt="Proposal"
+                class="timeline-img proposal"
+              />
+              <p>
+                Michael proposed during our vacation in Paris, under the Eiffel
+                Tower at sunset. Of course, Sarah said yes!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="section gallery">
+      <div class="container">
+        <h2 class="section-title">Our Gallery</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img
+              src="images/IMG_0273.JPG"
+              alt="Gallery Image 1"
+              class="gallery-img gal-1"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="images/IMG_0315.JPG"
+              alt="Gallery Image 2"
+              class="gallery-img gal-2"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="images/IMG_0288.JPG"
+              alt="Gallery Image 3"
+              class="gallery-img gal-3"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="images/IMG_0290.JPG"
+              alt="Gallery Image 4"
+              class="gallery-img gal-4"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="images/IMG_0309.JPG"
+              alt="Gallery Image 5"
+              class="gallery-img gal-5"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="images/IMG_3977.jpg"
+              alt="Gallery Image 6"
+              class="gallery-img gal-6"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Image Modal (Only for Gallery) -->
+    <div id="galleryModal" class="modal">
+      <span class="close">&times;</span>
+      <div class="modal-content" id="modal-content">
+        <span class="prev">&#10094;</span>
+        <img class="modal-img" id="modalImage" />
+        <span class="next">&#10095;</span>
+      </div>
+      <!-- <div class="caption" id="caption"></div> -->
+    </div>
+
+    <!-- Entourage -->
+
+    <!-- best man & matron of honor -->
+    <section id="entourage" class="section">
+      <div class="container">
+        <h2 class="section-title matron-bestman">Matron of Honor & Best Man</h2>
+        <div class="matron-bestman-grid">
+          <div class="matron-bestman-member">
+            <img
+              src="images/entourage/jucel_3.jpg"
+              alt="Matron of Honor"
+              class="member-photo"
+            />
+            <div class="member-name">Mrs. Jucel B. Gustilo</div>
+            <div class="member-role">Matron of Honor</div>
+          </div>
+          <div class="matron-bestman-member">
+            <img
+              src="images/entourage/no_image_male.png"
+              alt="Best Man"
+              class="member-photo"
+            />
+            <div class="member-name">Michael T. Samson</div>
+            <div class="member-role">Best Man</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Groomsmen and Bridesmaid -->
+      <div class="container">
+        <h2 class="section-title groomsmen-bridesmaid">
+          Bridesmaids & Groomsmen
+        </h2>
+        <div class="groomsmen-bridesmaid-grid">
+          <div class="groomsmen-bridesmaid-member">
+            <img
+              src="images/entourage/steph_edited.jpg"
+              alt="Maid of Honor"
+              class="member-photo"
+            />
+            <div class="member-name">Estephanie T. Samson</div>
+            <div class="member-role">Bridesmaid</div>
+          </div>
+          <div class="groomsmen-bridesmaid-member">
+            <img
+              src="images/entourage/no_image_male.png"
+              alt="Best Man"
+              class="member-photo"
+            />
+            <div class="member-name">Melquiades M. Colasito</div>
+            <div class="member-role">Groomsman</div>
+          </div>
+          <div class="groomsmen-bridesmaid-member">
+            <img
+              src="images/entourage/no_image_female.jpg"
+              alt="Bridesmaid"
+              class="member-photo"
+            />
+            <div class="member-name">Justine M. Punzalan</div>
+            <div class="member-role">Bridesmaid</div>
+          </div>
+          <div class="groomsmen-bridesmaid-member">
+            <img
+              src="images/entourage/no_image_male.png"
+              alt="Groomsman"
+              class="member-photo"
+            />
+            <div class="member-name">John M. Cari<span>&#xf1;</span>o</div>
+            <div class="member-role">Groomsman</div>
+          </div>
+          <div class="groomsmen-bridesmaid-member">
+            <img
+              src="images/entourage/joan_edited.jpg"
+              alt="Bridesmaid"
+              class="member-photo"
+            />
+            <div class="member-name">Joan O. Belmes</div>
+            <div class="member-role">Bridesmaid</div>
+          </div>
+          <div class="groomsmen-bridesmaid-member">
+            <img
+              src="images/entourage/no_image_male.png"
+              alt="Groomsman"
+              class="member-photo"
+            />
+            <div class="member-name">Don C. Mangalindan</div>
+            <div class="member-role">Groomsman</div>
+          </div>
+          <div class="groomsmen-bridesmaid-member">
+            <img
+              src="images/entourage/charm_edited.jpeg"
+              alt="Bridesmaid"
+              class="member-photo"
+            />
+            <div class="member-name">Charmain A. Cartagena</div>
+            <div class="member-role">Bridesmaid</div>
+          </div>
+          <div class="groomsmen-bridesmaid-member">
+            <img
+              src="images/entourage/kiko_2.jpg"
+              alt="Groomsman"
+              class="member-photo"
+            />
+            <div class="member-name">Francisco T. Munsayac</div>
+            <div class="member-role">Groomsman</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- light -->
+      <h2 class="section-title light">To Light our Way through Life</h2>
+      <div class="light-grid">
+        <div class="light-member">
+          <img
+            src="images/entourage/drae.jpeg"
+            alt="Maid of Honor"
+            class="member-photo"
+          />
+          <div class="member-name">Draeselle D. Gallego</div>
+          <!-- <div class="member-role">Matron of Honor</div> -->
+        </div>
+        <div class="light-member">
+          <img
+            src="images/entourage/no_image_male.png"
+            alt="Best Man"
+            class="member-photo"
+          />
+          <div class="member-name">Francis B. Sona</div>
+          <!-- <div class="member-role">Best Man</div> -->
+        </div>
+      </div>
+
+      <!-- clothe -->
+      <h2 class="section-title clothe">To Clothe Us in the Veil of Unity</h2>
+      <div class="clothe-grid">
+        <div class="clothe-member">
+          <img
+            src="images/entourage/no_image_female.jpg"
+            alt="Maid of Honor"
+            class="member-photo"
+          />
+          <div class="member-name">Mariekarr D. Bautista</div>
+          <!-- <div class="member-role">Matron of Honor</div> -->
+        </div>
+        <div class="clothe-member">
+          <img
+            src="images/entourage/micky_edited.jpg"
+            alt="Best Man"
+            class="member-photo"
+          />
+          <div class="member-name">Mark Christian S. Bautista</div>
+          <!-- <div class="member-role">Best Man</div> -->
+        </div>
+      </div>
+
+      <!-- bind -->
+      <h2 class="section-title bind">To Bind us in the Cord of Love</h2>
+      <div class="bind-grid">
+        <div class="bind-member">
+          <img
+            src="images/entourage/no_image_female.jpg"
+            alt="Maid of Honor"
+            class="member-photo"
+          />
+          <div class="member-name">Nerissa B. Mangalindan</div>
+          <!-- <div class="member-role">Matron of Honor</div> -->
+        </div>
+        <div class="bind-member">
+          <img
+            src="images/entourage/niek.jpg"
+            alt="Best Man"
+            class="member-photo"
+          />
+          <div class="member-name">Daniel C. Mangalindan</div>
+          <!-- <div class="member-role">Best Man</div> -->
+        </div>
+      </div>
+
+      <!-- Bearers -->
+      <h2 class="section-title bearers">Bearers</h2>
+      <div class="bearers-grid">
+        <div class="bearers-member">
+          <img
+            src="images/entourage/ali.jpg"
+            alt="coin bearer"
+            class="member-photo"
+          />
+          <div class="member-name">Mcalister A. Colasito</div>
+          <div class="member-role">Coin Bearer</div>
+        </div>
+        <div class="bearers-member">
+          <img
+            src="images/entourage/mon_2.jpeg"
+            alt="ring bearer"
+            class="member-photo"
+          />
+          <div class="member-name">Driton MonLewis D. Gallego</div>
+          <div class="member-role">Ring Bearer</div>
+        </div>
+        <div class="bearers-member">
+          <img
+            src="images/entourage/lei_2.jpeg"
+            alt="bible bearer"
+            class="member-photo"
+          />
+          <div class="member-name">Dmitri Lei D. Gallego</div>
+          <div class="member-role">Bible Bearer</div>
+        </div>
+        <div class="bearers-member">
+          <img
+            src="images/entourage/paul_2.JPG"
+            alt="flower girl"
+            class="member-photo"
+          />
+          <div class="member-name">Paul Umi Q. Cari<span>&#xf1;</span>o</div>
+          <div class="member-role">Flower Girl</div>
+        </div>
+        <div class="bearers-member">
+          <img
+            src="images/entourage/georgie_3.jpg"
+            alt="flower girl"
+            class="member-photo"
+          />
+          <div class="member-name">Georgie Q. Cari<span>&#xf1;</span>o</div>
+          <div class="member-role">Flower Girl</div>
+        </div>
+        <div class="bearers-member">
+          <img
+            src="images/entourage/tally_2.jpg"
+            alt="flower girl"
+            class="member-photo"
+          />
+          <div class="member-name">Maria Ataliah D. Bautista</div>
+          <div class="member-role">Flower Girl</div>
+        </div>
+        <div class="bearers-member bearers-last-image">
+          <img
+            src="images/entourage/amber.jpg"
+            alt="flower girl"
+            class="member-photo"
+          />
+          <div class="member-name">Amber Lexie B. Dela Paz</div>
+          <div class="member-role">Flower Girl</div>
+        </div>
+      </div>
+
+      <!-- Principal Sponsors -->
+      <div class="sponsors-section">
+        <h2 class="section-title sponsors">Principal Sponsors</h2>
+        <div class="sponsors-grid">
+          <div class="sponsor-name">Mr. & Mrs. Johnson</div>
+          <div class="sponsor-name">Mr. & Mrs. Williams</div>
+          <div class="sponsor-name">Mr. & Mrs. Brown</div>
+          <div class="sponsor-name">Mr. & Mrs. Davis</div>
+          <div class="sponsor-name">Mr. & Mrs. Miller</div>
+          <div class="sponsor-name">Mr. & Mrs. Wilson</div>
+          <div class="sponsor-name">Mr. & Mrs. Taylor</div>
+          <div class="sponsor-name">Mr. & Mrs. Anderson</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="wedding-details" class="details-section">
+      <div class="container">
+        <h2 class="section-title">Wedding Details</h2>
+
+        <div class="details-container">
+          <div class="details-grid">
+            <!-- Attire Card -->
+            <div class="detail-card">
+              <div class="detail-icon">
+                <i class="fas fa-tshirt"></i>
+              </div>
+              <h3 class="detail-title">Attire</h3>
+              <div class="detail-content">
+                <p><strong>Formal Attire Requested</strong></p>
+                <p>Gentlemen: Suits or Tuxedos</p>
+                <p>Ladies: Evening Gowns or Cocktail Dresses</p>
+                <p>Color Palette: Gold, Navy, and Blush</p>
+              </div>
+            </div>
+
+            <!-- Gifts Card -->
+            <div class="detail-card">
+              <div class="detail-icon">
+                <i class="fas fa-gift"></i>
+              </div>
+              <h3 class="detail-title">Gifts</h3>
+              <div class="detail-content">
+                <p>Your presence is present enough!</p>
+                <p>
+                  For those who wish to contribute, we have a honeymoon
+                  registry.
+                </p>
+                <a
+                  href="#"
+                  style="color: var(--sage-green); text-decoration: underline"
+                  >View Registry</a
+                >
+              </div>
+            </div>
+
+            <!-- Snap & Share Card -->
+            <div class="detail-card">
+              <div class="detail-icon">
+                <i class="fas fa-camera-retro"></i>
+              </div>
+              <h3 class="detail-title">Snap & Share</h3>
+              <div class="detail-content">
+                <p>Help us capture every special moment!</p>
+                <p>Use our wedding hashtag when sharing photos:</p>
+                <div class="hashtag">#SarahAndMichael2025</div>
+                <div class="social-icons">
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-facebook"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events-section section">
+      <div class="container">
+        <h2 class="section-title">Wedding Events</h2>
+
+        <!-- Ceremony Event -->
+        <div class="event-item">
+          <div class="event-image">
+            <img src="images/st_joseph_the_worker.jpg" alt="Wedding Ceremony" />
+          </div>
+          <div class="event-details">
+            <div class="event-time">3:00 PM</div>
+            <h3 class="event-title">Ceremony</h3>
+            <div class="event-location">
+              St. Joseph The Worker Parish, Gladiola Street, Greenland Executive
+              Village, Cainta, Philippines, 1920
+            </div>
+            <p class="event-description">
+              Join us as we exchange vows and become husband and wife in this
+              beautiful historic cathedral.
+            </p>
+            <a
+              href="https://maps.app.goo.gl/PH7s7y5LPRRa2tDs9"
+              target="_blank"
+              class="map-button"
+            >
+              <i class="fas fa-map-marker-alt"></i> View on Map
+            </a>
+          </div>
+        </div>
+
+        <!-- Reception Event -->
+        <div class="event-item">
+          <div class="event-image">
+            <img src="images/casa_bella.jpg" alt="Wedding Reception" />
+          </div>
+          <div class="event-details">
+            <div class="event-time">5:30 PM</div>
+            <h3 class="event-title">Reception</h3>
+            <div class="event-location">
+              Casa Bella Events Place, 14 Neptune Street, Tancingco Subdivision
+              Taytay, Rizal
+            </div>
+            <p class="event-description">
+              Dinner, dancing, and celebration! Join us for an unforgettable
+              evening of joy and festivity.
+            </p>
+            <a
+              href="https://maps.app.goo.gl/p2UqkiNHqzSbFjJNA"
+              target="_blank"
+              class="map-button"
+            >
+              <i class="fas fa-map-marker-alt"></i> View on Map
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>We can't wait to celebrate with you!</p>
+        <p>December 26, 2025</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
