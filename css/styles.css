@@ -1203,7 +1203,7 @@ a {
   }
 }
 /* Very Small Mobile (up to 375px) */
-@media (max-width: 375px) {
+@media only screen and (max-width: 375px) {
   .centered-content {
     top: 30%;
   }
@@ -1212,7 +1212,7 @@ a {
     height: 500px;
   }
   .carousel-item {
-    background-size: contain;
+    background-size: 100% 100%;
   }
   .countdown {
     gap: 5px;
