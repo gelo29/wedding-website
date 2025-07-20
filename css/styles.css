@@ -108,7 +108,7 @@ a {
 }
 
 /* Hero Parallax */
-.hero-carousel {
+.hero {
   position: relative;
   height: 100vh;
   min-height: 500px;
@@ -116,31 +116,24 @@ a {
   overflow: hidden;
 }
 
-.carousel-inner {
+.hero-inner {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-.carousel-item {
+.hero-item {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0;
-  transition: opacity 1.5s ease;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.carousel-item.active {
-  opacity: 1;
-  z-index: 1;
-}
-
-.carousel-item::before {
+.hero-item::before {
   content: "";
   position: absolute;
   top: 0;
@@ -149,70 +142,6 @@ a {
   height: 100%;
   background-color: var(--overlay-color);
 }
-
-/* Carousel Controls */
-.carousel-control {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 3;
-  color: white;
-  font-size: clamp(1.2rem, 4vw, 2.5rem);
-  cursor: pointer;
-  opacity: 0.7;
-  transition: all 0.3s ease;
-  width: clamp(35px, 10vw, 60px);
-  height: clamp(35px, 10vw, 60px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 50%;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.carousel-control:hover {
-  opacity: 1;
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.carousel-control.prev {
-  left: clamp(10px, 3vw, 30px);
-}
-
-.carousel-control.next {
-  right: clamp(10px, 3vw, 30px);
-}
-
-/* Carousel Indicators */
-.carousel-indicators {
-  position: absolute;
-  bottom: clamp(15px, 4vh, 30px);
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-  display: flex;
-  gap: clamp(6px, 1.5vw, 10px);
-}
-
-.indicator {
-  width: clamp(8px, 2.5vw, 12px);
-  height: clamp(8px, 2.5vw, 12px);
-  border-radius: 50%;
-  background: white;
-  opacity: 0.5;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.indicator.active {
-  opacity: 1;
-  background: var(--primary-color);
-  transform: scale(1.2);
-}
-
 .centered-content {
   position: absolute;
   top: 50%;
@@ -833,9 +762,6 @@ a {
   .detail-icon {
     font-size: 2.8rem;
   }
-  .hero h1 {
-    font-size: 5rem;
-  }
 
   .wedding-date {
     font-size: 2rem;
@@ -886,13 +812,6 @@ a {
 
   .detail-card {
     padding: 25px;
-  }
-  .hero h1 {
-    font-size: 3.5rem;
-  }
-
-  .hero p {
-    font-size: 1.3rem;
   }
 
   .wedding-date {
@@ -1194,11 +1113,11 @@ a {
   .centered-content {
     top: 30%;
   }
-  .hero-carousel {
+  .hero {
     width: 100%;
     height: 550px;
   }
-  .carousel-item {
+  .hero-item {
     background-size: cover;
   }
 }
@@ -1207,11 +1126,11 @@ a {
   .centered-content {
     top: 30%;
   }
-  .hero-carousel {
+  .hero {
     width: 100%;
     height: 500px;
   }
-  .carousel-item {
+  .hero-item {
     background-size: 100% 100%;
   }
   .countdown {
@@ -1225,6 +1144,7 @@ a {
 
   .countdown-number {
     font-size: 1.5rem;
+    border: 0;
   }
   .nav-links {
     width: 100%;
