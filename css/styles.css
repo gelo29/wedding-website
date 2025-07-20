@@ -202,7 +202,6 @@ a {
   display: inline-block;
   background-color: var(--light-color);
   color: var(--sage-green);
-  font-family: "Playfair Display", serif;
   font-weight: 700;
   font-size: clamp(1rem, 3vw, 1.3rem);
   padding: clamp(10px, 2vh, 15px) clamp(25px, 5vw, 40px);
@@ -214,6 +213,7 @@ a {
   border: none;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .rsvp-button:hover {
@@ -225,7 +225,7 @@ a {
 
 .rsvp-button:active {
   transform: translateY(1px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); */
 }
 
 /* Our Story Timeline */
