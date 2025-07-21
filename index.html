@@ -78,7 +78,7 @@
       <div class="hero-inner">
         <!-- Slide 1 -->
         <div
-          class="hero-item active"
+          class="hero-item"
           style="
             background-image: url('images/IMG_E9498.JPG');
             background-position: 50% 90%;
@@ -157,66 +157,82 @@
     <section id="gallery" class="section gallery">
       <div class="container">
         <h2 class="section-title">Our Gallery</h2>
-        <div class="gallery-grid">
-          <div class="gallery-item">
-            <img
-              src="images/IMG_0273.JPG"
-              alt="Gallery Image 1"
-              class="gallery-img gal-1"
-            />
+        <div class="gallery-carousel">
+          <div class="gallery-inner">
+            <div
+              class="gallery-item active"
+              style="
+                background-image: url('images/IMG_0273.JPG');
+                background-position: 50% 10%;
+              "
+            ></div>
+            <div
+              class="gallery-item"
+              style="
+                background-image: url('images/IMG_0315.JPG');
+                background-position: 50% 10%;
+              "
+            ></div>
+            <div
+              class="gallery-item"
+              style="
+                background-image: url('images/IMG_0288.JPG');
+                background-position: 50% 10%;
+              "
+            ></div>
+            <div
+              class="gallery-item"
+              style="
+                background-image: url('images/IMG_0290.JPG');
+                background-position: 50% 10%;
+              "
+            ></div>
+            <div
+              class="gallery-item"
+              style="
+                background-image: url('images/IMG_0309.JPG');
+                background-position: 50% 20%;
+              "
+            ></div>
+            <div
+              class="gallery-item"
+              style="
+                background-image: url('images/IMG_3977.jpg');
+                background-position: 50% 30%;
+              "
+            ></div>
           </div>
-          <div class="gallery-item">
-            <img
-              src="images/IMG_0315.JPG"
-              alt="Gallery Image 2"
-              class="gallery-img gal-2"
-            />
+          <!-- Carousel Controls -->
+          <div class="carousel-control prev" onclick="prevSlide()">
+            <i class="fas fa-chevron-left"></i>
           </div>
-          <div class="gallery-item">
-            <img
-              src="images/IMG_0288.JPG"
-              alt="Gallery Image 3"
-              class="gallery-img gal-3"
-            />
+          <div class="carousel-control next" onclick="nextSlide()">
+            <i class="fas fa-chevron-right"></i>
           </div>
-          <div class="gallery-item">
-            <img
-              src="images/IMG_0290.JPG"
-              alt="Gallery Image 4"
-              class="gallery-img gal-4"
-            />
-          </div>
-          <div class="gallery-item">
-            <img
-              src="images/IMG_0309.JPG"
-              alt="Gallery Image 5"
-              class="gallery-img gal-5"
-            />
-          </div>
-          <div class="gallery-item">
-            <img
-              src="images/IMG_3977.jpg"
-              alt="Gallery Image 6"
-              class="gallery-img gal-6"
-            />
+
+          <!-- Carousel Indicators -->
+          <div class="carousel-indicators">
+            <div class="indicator active" onclick="goToSlide(0)"></div>
+            <div class="indicator" onclick="goToSlide(1)"></div>
+            <div class="indicator" onclick="goToSlide(2)"></div>
+            <div class="indicator" onclick="goToSlide(3)"></div>
+            <div class="indicator" onclick="goToSlide(4)"></div>
+            <div class="indicator" onclick="goToSlide(5)"></div>
           </div>
         </div>
       </div>
     </section>
-
     <!-- Image Modal (Only for Gallery) -->
-    <div id="galleryModal" class="modal">
+    <!-- <div id="galleryModal" class="modal">
       <span class="close">&times;</span>
       <div class="modal-content" id="modal-content">
         <span class="prev">&#10094;</span>
         <img class="modal-img" id="modalImage" />
         <span class="next">&#10095;</span>
       </div>
-      <!-- <div class="caption" id="caption"></div> -->
-    </div>
+    </div> -->
 
     <!-- Entourage -->
-
     <!-- best man & matron of honor -->
     <section id="entourage" class="section">
       <div class="container">

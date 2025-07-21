@@ -38,80 +38,6 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-// Image Modal functionality (Gallery only)
-const modal = document.getElementById("galleryModal");
-const modalContent = document.getElementById("modal-content");
-const modalImg = document.getElementById("modalImage");
-const captionText = document.getElementById("caption");
-const closeBtn = document.getElementsByClassName("close")[0];
-const prevBtn = document.getElementsByClassName("prev")[0];
-const nextBtn = document.getElementsByClassName("next")[0];
-
-// Get only gallery images (excluding entourage)
-const galleryImages = document.querySelectorAll(".gallery-img");
-let currentIndex = 0;
-
-// Open modal when clicking on gallery images
-galleryImages.forEach((img, index) => {
-  img.addEventListener("click", function () {
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-    currentIndex = index;
-    document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
-  });
-});
-
-// Close modal
-function closeModal() {
-  modal.style.display = "none";
-  document.body.style.overflow = "auto"; // Re-enable scrolling
-}
-
-closeBtn.addEventListener("click", closeModal);
-
-// Close when clicking outside the image
-modal.addEventListener("click", function (e) {
-  if (e.target === modalContent) {
-    closeModal();
-  }
-});
-
-// Previous image
-prevBtn.addEventListener("click", function (e) {
-  e.stopPropagation();
-  currentIndex =
-    (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-  modalImg.src = galleryImages[currentIndex].src;
-  captionText.innerHTML = galleryImages[currentIndex].alt;
-});
-
-// Next image
-nextBtn.addEventListener("click", function (e) {
-  e.stopPropagation();
-  currentIndex = (currentIndex + 1) % galleryImages.length;
-  modalImg.src = galleryImages[currentIndex].src;
-  captionText.innerHTML = galleryImages[currentIndex].alt;
-});
-
-// Keyboard navigation
-document.addEventListener("keydown", function (e) {
-  if (modal.style.display === "block") {
-    if (e.key === "Escape") {
-      closeModal();
-    } else if (e.key === "ArrowLeft") {
-      currentIndex =
-        (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-      modalImg.src = galleryImages[currentIndex].src;
-      captionText.innerHTML = galleryImages[currentIndex].alt;
-    } else if (e.key === "ArrowRight") {
-      currentIndex = (currentIndex + 1) % galleryImages.length;
-      modalImg.src = galleryImages[currentIndex].src;
-      captionText.innerHTML = galleryImages[currentIndex].alt;
-    }
-  }
-});
-
 // Countdown Timer
 function updateCountdown() {
   const weddingDate = new Date("December 26, 2025 16:00:00").getTime();
@@ -156,7 +82,7 @@ const countdownTimer = setInterval(updateCountdown, 1000);
 
 // Carousel functionality
 let currentSlide = 0;
-const slides = document.querySelectorAll(".carousel-item");
+const slides = document.querySelectorAll(".gallery-item");
 const indicators = document.querySelectorAll(".indicator");
 let interval;
 
@@ -192,7 +118,7 @@ function startCarousel() {
 }
 
 // Pause on hover/touch
-const carousel = document.querySelector(".hero-carousel");
+const carousel = document.querySelector(".gallery-carousel");
 carousel.addEventListener("mouseenter", () => {
   clearInterval(interval);
 });

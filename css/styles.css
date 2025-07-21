@@ -341,149 +341,104 @@ a {
   background-color: var(--sage-green);
 }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-.gallery-item {
+.gallery-carousel {
   position: relative;
+  height: 100vh;
+  width: 100%;
+  min-height: 500px;
+  max-height: 1200px;
   overflow: hidden;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  height: 300px;
 }
-
-.gallery-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-  cursor: pointer;
-}
-
-.gal-1,
-.gal-3 {
-  object-position: 50% 10%;
-}
-.gal-2 {
-  object-position: 50% 20%;
-}
-.gal-4 {
-  object-position: 50% 3%;
-}
-.gal-5 {
-  object-position: 50% 25%;
-}
-.gal-6 {
-  object-position: 50% 35%;
-}
-
-.gallery-item:hover .gallery-img {
-  transform: scale(1.1);
-}
-.details-section h2,
-.gallery h2 {
-  color: var(--light-color);
-}
-
-/* Image Modal */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 2000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  overflow: auto;
-  animation: fadeIn 0.3s;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.modal-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
+.gallery-inner {
   position: relative;
+  width: 100%;
+  height: 100%;
 }
-
-.modal-img {
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain;
-}
-
-.close {
+.gallery-item {
   position: absolute;
-  top: 20px;
-  right: 30px;
-  color: white;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-  z-index: 3;
-  transition: color 0.3s;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-
-.close:hover,
-.close:focus {
-  color: var(--sage-green);
-  text-decoration: none;
+.gallery-item.active {
+  opacity: 1;
+  z-index: 1;
 }
-
-.prev,
-.next {
-  cursor: pointer;
+.gallery-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* Carousel Controls */
+.carousel-control {
   position: absolute;
   top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
+  transform: translateY(-50%);
+  z-index: 3;
   color: white;
-  font-weight: bold;
-  font-size: 30px;
-  transition: 0.3s;
+  font-size: clamp(1.2rem, 4vw, 2.5rem);
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  width: clamp(35px, 10vw, 60px);
+  height: clamp(35px, 10vw, 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+.carousel-control:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.5);
 }
 
-.prev {
-  left: 0;
-  border-radius: 0 3px 3px 0;
+.carousel-control.prev {
+  left: clamp(10px, 3vw, 30px);
 }
 
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-  color: var(--sage-green);
+.carousel-control.next {
+  right: clamp(10px, 3vw, 30px);
 }
 
-.caption {
+/* Carousel Indicators */
+.carousel-indicators {
   position: absolute;
-  bottom: 20px;
-  width: 100%;
-  text-align: center;
-  color: white;
-  font-size: 1.2rem;
-  padding: 10px 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  bottom: clamp(15px, 4vh, 30px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  gap: clamp(6px, 1.5vw, 10px);
+}
+
+.indicator {
+  width: clamp(8px, 2.5vw, 12px);
+  height: clamp(8px, 2.5vw, 12px);
+  border-radius: 50%;
+  background: white;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.indicator.active {
+  opacity: 1;
+  background: var(--primary-color);
+  transform: scale(1.2);
 }
 
 /* best man & matron of honor */
@@ -783,9 +738,9 @@ a {
     font-size: 3.5rem;
   }
 
-  .gallery-grid {
+  /* .gallery-grid {
     gap: 30px;
-  }
+  } */
   .details-grid {
     gap: 35px;
   }
@@ -867,6 +822,15 @@ a {
 
 /* Small Tablets (576px - 767px) */
 @media (max-width: 767px) {
+  .gallery-carousel {
+    position: relative;
+    height: 500px;
+    width: 100%;
+    margin: auto;
+    min-height: 300px;
+    max-height: 800px;
+    overflow: hidden;
+  }
   .details-grid {
     grid-template-columns: 1fr;
     max-width: 600px;
@@ -909,6 +873,8 @@ a {
   }
 
   .burger {
+    position: relative;
+    right: 5%;
     display: block;
   }
 
@@ -1023,6 +989,15 @@ a {
 
 /* Mobile Devices (up to 575px) */
 @media (max-width: 575px) {
+  .gallery-carousel {
+    position: relative;
+    height: 350px;
+    width: 100%;
+    margin: auto;
+    min-height: 300px;
+    max-height: 800px;
+    overflow: hidden;
+  }
   .wedding-date {
     font-size: 1.2rem;
     margin-bottom: 20px;
@@ -1121,8 +1096,17 @@ a {
     background-size: cover;
   }
 }
-/* Very Small Mobile (up to 375px) */
+
 @media only screen and (max-width: 375px) {
+  .gallery-carousel {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    margin: auto;
+    min-height: 100px;
+    max-height: 500px;
+    overflow: hidden;
+  }
   .centered-content {
     top: 30%;
   }
