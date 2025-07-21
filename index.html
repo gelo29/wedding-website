@@ -156,69 +156,21 @@
     <!-- Gallery -->
     <section id="gallery" class="section gallery">
       <div class="container">
-        <h2 class="section-title">Our Gallery</h2>
+        <h2 class="section-title gallery-title">Our Gallery</h2>
         <div class="gallery-carousel">
-          <div class="gallery-inner">
-            <div
-              class="gallery-item active"
-              style="
-                background-image: url('images/IMG_0273.JPG');
-                background-position: 50% 10%;
-              "
-            ></div>
-            <div
-              class="gallery-item"
-              style="
-                background-image: url('images/IMG_0315.JPG');
-                background-position: 50% 10%;
-              "
-            ></div>
-            <div
-              class="gallery-item"
-              style="
-                background-image: url('images/IMG_0288.JPG');
-                background-position: 50% 10%;
-              "
-            ></div>
-            <div
-              class="gallery-item"
-              style="
-                background-image: url('images/IMG_0290.JPG');
-                background-position: 50% 10%;
-              "
-            ></div>
-            <div
-              class="gallery-item"
-              style="
-                background-image: url('images/IMG_0309.JPG');
-                background-position: 50% 20%;
-              "
-            ></div>
-            <div
-              class="gallery-item"
-              style="
-                background-image: url('images/IMG_3977.jpg');
-                background-position: 50% 30%;
-              "
-            ></div>
-          </div>
-          <!-- Carousel Controls -->
-          <div class="carousel-control prev" onclick="prevSlide()">
-            <i class="fas fa-chevron-left"></i>
-          </div>
-          <div class="carousel-control next" onclick="nextSlide()">
-            <i class="fas fa-chevron-right"></i>
-          </div>
+          <img
+            class="slides slide-1 active"
+            src="images/IMG_3977.jpg"
+            alt="Slide 1"
+          />
+          <img class="slides slide-2" src="images/IMG_0315.JPG" alt="Slide 2" />
+          <img class="slides slide-3" src="images/IMG_0290.JPG" alt="Slide 3" />
+          <!-- Controls -->
+          <a class="prev">&#10094;</a>
+          <a class="next">&#10095;</a>
 
-          <!-- Carousel Indicators -->
-          <div class="carousel-indicators">
-            <div class="indicator active" onclick="goToSlide(0)"></div>
-            <div class="indicator" onclick="goToSlide(1)"></div>
-            <div class="indicator" onclick="goToSlide(2)"></div>
-            <div class="indicator" onclick="goToSlide(3)"></div>
-            <div class="indicator" onclick="goToSlide(4)"></div>
-            <div class="indicator" onclick="goToSlide(5)"></div>
-          </div>
+          <!-- Dots -->
+          <div class="dots"></div>
         </div>
       </div>
     </section>

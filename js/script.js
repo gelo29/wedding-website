@@ -81,70 +81,52 @@ updateCountdown();
 const countdownTimer = setInterval(updateCountdown, 1000);
 
 // Carousel functionality
-let currentSlide = 0;
-const slides = document.querySelectorAll(".gallery-item");
-const indicators = document.querySelectorAll(".indicator");
-let interval;
+const slides = document.querySelectorAll(".slides");
+const dotsContainer = document.querySelector(".dots");
+let currentIndex = 0;
+let slideInterval;
+
+slides.forEach((_, i) => {
+  const dot = document.createElement("span");
+  dot.classList.add("dot");
+  if (i === 0) dot.classList.add("active");
+  dot.addEventListener("click", () => showSlide(i));
+  dotsContainer.appendChild(dot);
+});
+const dots = document.querySelectorAll(".dot");
 
 function showSlide(index) {
-  if (index >= slides.length) currentSlide = 0;
-  else if (index < 0) currentSlide = slides.length - 1;
-  else currentSlide = index;
-
-  slides.forEach((slide, i) => {
-    slide.classList.toggle("active", i === currentSlide);
-  });
-
-  indicators.forEach((indicator, i) => {
-    indicator.classList.toggle("active", i === currentSlide);
-  });
+  slides[currentIndex].classList.remove("active");
+  dots[currentIndex].classList.remove("active");
+  currentIndex = (index + slides.length) % slides.length;
+  slides[currentIndex].classList.add("active");
+  dots[currentIndex].classList.add("active");
 }
 
 function nextSlide() {
-  showSlide(currentSlide + 1);
+  showSlide(currentIndex + 1);
 }
 
 function prevSlide() {
-  showSlide(currentSlide - 1);
+  showSlide(currentIndex - 1);
 }
 
-function goToSlide(index) {
-  showSlide(index);
+document.querySelector(".next").addEventListener("click", nextSlide);
+document.querySelector(".prev").addEventListener("click", prevSlide);
+
+function startSlideShow() {
+  slideInterval = setInterval(nextSlide, 4000);
 }
 
-// Auto-advance every 5 seconds
-function startCarousel() {
-  interval = setInterval(nextSlide, 5000);
+function stopSlideShow() {
+  clearInterval(slideInterval);
 }
 
-// Pause on hover/touch
-const carousel = document.querySelector(".gallery-carousel");
-carousel.addEventListener("mouseenter", () => {
-  clearInterval(interval);
-});
+const slideshowContainer = document.querySelector(".gallery-carousel");
+slideshowContainer.addEventListener("mouseenter", stopSlideShow);
+slideshowContainer.addEventListener("mouseleave", startSlideShow);
 
-carousel.addEventListener("mouseleave", startCarousel);
-
-// Touch events for mobile
-carousel.addEventListener(
-  "touchstart",
-  () => {
-    clearInterval(interval);
-  },
-  { passive: true }
-);
-
-carousel.addEventListener(
-  "touchend",
-  () => {
-    setTimeout(startCarousel, 3000);
-  },
-  { passive: true }
-);
-
-// Initialize
-startCarousel();
-
+startSlideShow();
 // Handle window resize
 window.addEventListener("resize", function () {
   carousel.style.display = "none";
