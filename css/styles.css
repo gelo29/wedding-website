@@ -73,7 +73,7 @@ a {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 20px 0;
+  padding: 24px 0;
 }
 
 .nav-links {
@@ -733,7 +733,51 @@ a {
     font-size: 2rem;
   }
 }
+@media (max-width: 1024px) {
+  /* Navigation */
+  .nav-links {
+    position: fixed;
+    right: 0;
+    top: 0; /*  80px */
+    background-color: var(--dark-color);
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    transform: translateY(-150%);
+    transition: transform 0.5s ease-in;
+  }
 
+  .nav-links.active {
+    transform: translateY(0);
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+  }
+
+  .burger {
+    position: relative;
+    right: 8%;
+    display: block;
+  }
+
+  .burger.active div:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .burger.active div:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger.active div:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+  /* Scrolled state adjustments */
+  .navbar.scrolled {
+    padding: 5px 0;
+  }
+}
 /* Tablets (768px - 991px) */
 @media (max-width: 991px) {
   .details-grid {
@@ -821,49 +865,6 @@ a {
     margin-bottom: 30px;
   }
 
-  /* Navigation */
-  .nav-links {
-    position: fixed;
-    right: 0;
-    top: 0; /*  80px */
-    background-color: var(--overlay-color);
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-    transform: translateY(-150%);
-    transition: transform 0.5s ease-in;
-  }
-
-  .nav-links.active {
-    transform: translateY(0);
-  }
-
-  .nav-links li {
-    margin: 15px 0;
-  }
-
-  .burger {
-    position: relative;
-    right: 8%;
-    display: block;
-  }
-
-  .burger.active div:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-  }
-
-  .burger.active div:nth-child(2) {
-    opacity: 0;
-  }
-
-  .burger.active div:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-  }
-  /* Scrolled state adjustments */
-  .navbar.scrolled {
-    padding: 15px 0;
-  }
   /* Our story */
   .section {
     padding: 50px 0;
