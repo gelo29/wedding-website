@@ -48,7 +48,7 @@ a {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 50px;
-  letter-spacing: -1.2px;
+
   /* color: var(--secondary-color); */
 }
 .section-title:not(:first-child) {
@@ -427,7 +427,7 @@ a {
 /* best man & matron of honor */
 .matron-bestman {
   color: var(--sage-green);
-  word-spacing: 10px;
+  word-spacing: 0.5px;
 }
 .matron-bestman-grid {
   display: grid;
@@ -465,7 +465,7 @@ a {
 .clothe,
 .groomsmen-bridesmaid {
   color: var(--sage-green);
-  word-spacing: 10px;
+  word-spacing: 0.5px;
   margin-top: 50px;
 }
 .bind-grid,
