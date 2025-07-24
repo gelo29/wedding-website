@@ -34,7 +34,8 @@ a {
   color: var(--sage-green);
 }
 
-.container {
+.container,
+.container-carousel {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
@@ -338,6 +339,7 @@ a {
   object-position: 5px 30%;
 }
 /* Gallery */
+
 .gallery {
   background-color: var(--sage-green);
 }
@@ -734,6 +736,14 @@ a {
   }
 }
 @media (max-width: 1024px) {
+  /* Gallery */
+
+  .container-carousel {
+    display: flex;
+    flex-direction: column; /* stacks children vertically */
+    align-items: center; /* centers horizontally (now cross-axis) */
+    justify-content: center; /* centers vertically (now main-axis) */
+  }
   /* Navigation */
   .nav-links {
     position: fixed;
@@ -780,6 +790,14 @@ a {
 }
 /* Tablets (768px - 991px) */
 @media (max-width: 991px) {
+  .gallery {
+    height: 100vh;
+  }
+  .gallery-carousel {
+    width: 100%;
+    max-width: 400px;
+    height: 380px;
+  }
   .details-grid {
     grid-template-columns: 1fr;
     max-width: 500px;
@@ -838,6 +856,14 @@ a {
 
 /* Small Tablets (576px - 767px) */
 @media (max-width: 767px) {
+  .gallery {
+    height: 100vh;
+  }
+  .gallery-carousel {
+    width: 100%;
+    max-width: 400px;
+    height: 380px;
+  }
   .section-title {
     font-size: 2rem;
   }
@@ -866,6 +892,13 @@ a {
   }
 
   /* Our story */
+  .story {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
   .section {
     padding: 50px 0;
   }
@@ -876,6 +909,8 @@ a {
 
   .timeline-item {
     width: 100%;
+    max-width: 500px;
+    min-width: 300px;
     padding-left: 70px;
     padding-right: 25px;
   }
@@ -956,6 +991,14 @@ a {
 
 /* Mobile Devices (up to 575px) */
 @media (max-width: 575px) {
+  .gallery {
+    height: 100vh;
+  }
+  .gallery-carousel {
+    width: 100%;
+    max-width: 400px;
+    height: 380px;
+  }
   .section-title {
     font-size: 1.3rem;
   }
@@ -963,9 +1006,7 @@ a {
   .member-role {
     font-size: 0.8rem;
   }
-  .gallery-carousel {
-    height: 350px;
-  }
+
   .wedding-date {
     font-size: 1.2rem;
     margin-bottom: 20px;
@@ -1001,12 +1042,19 @@ a {
   }
 
   /* Our story */
+  .story {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
   .section {
     padding: 40px 0;
   }
 
   .timeline-item {
-    padding-left: 50px;
+    padding-left: 69px;
   }
 
   .timeline-item::after {
@@ -1019,11 +1067,13 @@ a {
   }
 
   .timeline-content h3 {
+    margin-left: 20px;
     font-size: 1.4rem;
   }
 
   .timeline-img {
-    height: 140px;
+    height: 100%;
+    max-height: 300px;
   }
   .sponsors-grid {
     grid-template-columns: repeat(2, minmax(150px, 150px));
@@ -1060,11 +1110,17 @@ a {
   .section-title {
     font-size: 1.2rem;
   }
+  .gallery {
+    height: 100vh;
+  }
+
   .member-name,
   .member-role {
     font-size: 0.7rem;
   }
   .gallery-carousel {
+    width: 100%;
+    max-width: 290px;
     height: 350px;
   }
 
@@ -1102,9 +1158,15 @@ a {
   }
 
   /* Our Story */
-
+  .story {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
   .timeline-item {
-    padding-left: 40px;
+    padding-left: 50px;
     padding-right: 15px;
   }
 
@@ -1124,7 +1186,8 @@ a {
   }
 
   .timeline-img {
-    height: 120px;
+    height: 100%;
+    max-height: 150px;
   }
   .detail-title {
     font-size: 1.3rem;
