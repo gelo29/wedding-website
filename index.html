@@ -3,568 +3,347 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gelo & Celly's Wedding</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <link rel="stylesheet" href="css/styles.css" />
+    <title>Wedding Page</title>
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Monsieur+La+Doulaise&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"
     />
   </head>
   <body>
     <!-- Navigation -->
-    <nav class="navbar">
-      <div class="container nav-container">
-        <!-- <a href="#" class="logo">Gelo & Celly</a> -->
-        <ul class="nav-links">
+    <header id="navbar">
+      <nav class="nav-container">
+        <div class="logo">
+          <a href="index.html"
+            ><img src="images/logo_sage.png" alt="Logo" class="logo logo-green"
+          /></a>
+          <a href="index.html"
+            ><img
+              src="images/logo_white.png"
+              alt="Logo"
+              class="logo logo-white"
+          /></a>
+        </div>
+
+        <!-- Hamburger icon -->
+        <div class="hamburger" id="hamburger">&#9776;</div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
           <li><a href="#our-story">Our Story</a></li>
           <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#entourage">Entourage</a></li>
-          <li><a href="#wedding-details">Wedding Details</a></li>
-          <li><a href="#events">Events</a></li>
-
-          <!-- <li><a href="#rsvp">RSVP</a></li> -->
+          <li><a href="entourage.html">Entourage</a></li>
+          <li><a href="#details">Details</a></li>
+          <li><a href="#event">Event</a></li>
+          <li><a href="#faq">FAQs</a></li>
+          <li><a href="#rsvp" class="rsvp-btn">RSVP</a></li>
         </ul>
-        <div class="burger">
-          <div></div>
-          <div></div>
-          <div></div>
+        <!-- Side Panel Menu -->
+        <div class="side-menu" id="side-menu">
+          <span class="close-btn" id="close-btn">&times;</span>
+          <ul class="menu-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#our-story">Our Story</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="entourage.html">Entourage</a></li>
+            <li><a href="#details">Details</a></li>
+            <li><a href="#event">Event</a></li>
+            <li><a href="#faq">FAQs</a></li>
+            <li><a href="#rsvp" class="rsvp-btn">RSVP</a></li>
+          </ul>
         </div>
-      </div>
-    </nav>
-
-    <!-- Hero Parallax -->
-
-    <div class="centered-content">
-      <h1 class="couple-name">Angelo & Celly</h1>
-      <div class="wedding-date">December 26, 2025</div>
-      <div class="countdown-container">
-        <div class="countdown">
-          <div class="countdown-item">
-            <span class="countdown-number" id="days">00</span>
-            <span class="countdown-label">Days</span>
+      </nav>
+    </header>
+    <!-- Hero -->
+    <section id="hero">
+      <div class="hero-overlay">
+        <div class="hero-content">
+          <h1>Angelo & Celly Wedding</h1>
+          <p>Please join us on our wedding day as we start our new chapter</p>
+          <h3>December 26, 2025</h3>
+          <div class="hero-buttons">
+            <a href="#invitation" class="hero-button">Invitation</a>
+            <a href="#rsvp" class="hero-button rsvp-button-mobile">RSVP</a>
           </div>
-          <div class="countdown-item">
-            <span class="countdown-number" id="hours">00</span>
-            <span class="countdown-label">Hours</span>
-          </div>
-          <div class="countdown-item">
-            <span class="countdown-number" id="minutes">00</span>
-            <span class="countdown-label">Minutes</span>
-          </div>
-          <div class="countdown-item">
-            <span class="countdown-number" id="seconds">00</span>
-            <span class="countdown-label">Seconds</span>
+          <div class="countdown" id="countdown">
+            <div><span id="days">0</span><small>DAYS</small></div>
+            <div><span id="hours">0</span><small>HOURS</small></div>
+            <div><span id="minutes">0</span><small>MINUTES</small></div>
+            <div><span id="seconds">0</span><small>SECONDS</small></div>
           </div>
         </div>
-        <!-- RSVP Button -->
-        <button class="rsvp-button">RSVP Now</button>
-      </div>
-    </div>
-
-    <!-- Hero Carousel Section -->
-    <section class="hero">
-      <div class="hero-inner">
-        <!-- Slide 1 -->
-        <div
-          class="hero-item"
-          style="
-            background-image: url('images/IMG_E9498.JPG');
-            background-position: 50% 90%;
-          "
-        ></div>
       </div>
     </section>
-
     <!-- Our Story -->
-    <section id="our-story" class="section story">
-      <h2 class="section-title">Our Story</h2>
-      <div class="container-story">
-        <div class="timeline">
-          <div class="timeline-item left">
-            <div class="timeline-content">
-              <h3>First Meeting</h3>
-              <p>December 2020</p>
-              <img
-                src="images/first_meet.jpeg"
-                alt="First Meeting"
-                class="timeline-img"
-              />
-              <p>We met through a mutual friend.</p>
+
+    <section class="our-story-section" id="our-story">
+      <div class="our-story-image">
+        <img src="images/our_story_2.png" alt="Our Story Image" />
+        <h2 class="mobile-overlay-title">Our Story</h2>
+      </div>
+      <div class="our-story-text">
+        <h2 class="desktop-title">Our Story</h2>
+        <p>
+          Angelo and Celly's love story began in the most unexpected place and
+          bloomed into something beautiful and timeless. Through shared dreams,
+          laughter, and challenges, their bond grew stronger with each day.
+        </p>
+        <p>
+          Now, they invite you to celebrate a new chapter in their journey — a
+          celebration of love, unity, and forever.
+        </p>
+      </div>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+      <h2 class="gallery-title">Gallery</h2>
+      <div class="gallery-wrapper">
+        <div class="swiper gallery-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide masonry-slide">
+              <a href="images/gallery/gallery1.JPG" class="glightbox">
+                <img
+                  src="images/gallery/gallery1.JPG"
+                  alt="Gallery image 1"
+                  style="object-position: 50% 20%"
+                />
+              </a>
             </div>
-          </div>
-          <div class="timeline-item right">
-            <div class="timeline-content">
-              <h3>First Date</h3>
-              <p>January 2021</p>
-              <img
-                src="images/first_date.jpg"
-                alt="First Date"
-                class="timeline-img"
-              />
-              <p>
-                Our first date was at a cozy Italian restaurant downtown. We
-                talked for hours and closed the place down.
-              </p>
+            <div class="swiper-slide masonry-slide">
+              <a href="images/gallery/gallery2.jpg" class="glightbox">
+                <img
+                  src="images/gallery/gallery2.jpg"
+                  alt="Gallery image 2"
+                  style="object-position: 50% 30%"
+                />
+              </a>
             </div>
-          </div>
-          <div class="timeline-item left">
-            <div class="timeline-content">
-              <h3>Our Adventures</h3>
-              <p>May 2022</p>
-              <img
-                src="images/adventures.jpg"
-                alt="Adventures"
-                class="timeline-img"
-              />
-              <p>
-                After two years of dating, we decided to take the next step and
-                moved into our first apartment together.
-              </p>
+            <div class="swiper-slide masonry-slide">
+              <a href="images/gallery/gallery3.JPG" class="glightbox">
+                <img
+                  src="images/gallery/gallery3.JPG"
+                  alt="Gallery image 3"
+                  style="object-position: 50% 20%"
+                />
+              </a>
             </div>
-          </div>
-          <div class="timeline-item right">
-            <div class="timeline-content">
-              <h3>The Proposal</h3>
-              <p>January 2024</p>
-              <img
-                src="images/IMG_E9711.JPG"
-                alt="Proposal"
-                class="timeline-img proposal"
-              />
-              <p>
-                Michael proposed during our vacation in Paris, under the Eiffel
-                Tower at sunset. Of course, Sarah said yes!
-              </p>
+            <div class="swiper-slide masonry-slide">
+              <a href="images/gallery/gallery4.JPG" class="glightbox">
+                <img
+                  src="images/gallery/gallery4.JPG"
+                  alt="Gallery image 4"
+                  style="object-position: 50% 12%"
+                />
+              </a>
             </div>
+            <div class="swiper-slide masonry-slide">
+              <a href="images/gallery/gallery5.JPG" class="glightbox">
+                <img
+                  src="images/gallery/gallery5.JPG"
+                  alt="Gallery image 4"
+                  style="object-position: 50% 5%"
+                />
+              </a>
+            </div>
+            <div class="swiper-slide masonry-slide">
+              <a href="images/gallery/gallery6.JPG" class="glightbox">
+                <img
+                  src="images/gallery/gallery6.JPG"
+                  alt="Gallery image 4"
+                  style="object-position: 50% 20%"
+                />
+              </a>
+            </div>
+            <div class="swiper-slide masonry-slide">
+              <a href="images/gallery/gallery7.JPG" class="glightbox">
+                <img src="images/gallery/gallery7.JPG" alt="Gallery image 4" />
+              </a>
+            </div>
+            <div class="swiper-slide masonry-slide">
+              <a href="images/gallery/gallery8.JPG" class="glightbox">
+                <img src="images/gallery/gallery8.JPG" alt="Gallery image 4" />
+              </a>
+            </div>
+            <!-- Add more slides as needed -->
           </div>
+
+          <!-- Optional navigation -->
+          <!-- <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div> -->
+        </div>
+      </div>
+    </section>
+    <section id="details" class="details-section">
+      <div class="details-container">
+        <!-- Attire -->
+        <div class="detail-card">
+          <img src="images/attire.png" alt="Attire" class="detail-icon" />
+          <h2 class="detail-title">Attire</h2>
+          <p>Formal Attire<br />Suit and tie, Formal Dress</p>
+          <p><strong>Color Palette:</strong></p>
+          <div class="color-palette">
+            <span style="background-color: #4c5b73"></span>
+            <span style="background-color: #7a8da1"></span>
+            <span style="background-color: #e5b8b0"></span>
+            <span style="background-color: #fbeaea"></span>
+            <span style="background-color: #f9e7d4"></span>
+          </div>
+        </div>
+
+        <!-- Gifts -->
+        <div class="detail-card">
+          <img src="images/gift.png" alt="Gifts" class="detail-icon" />
+          <h2 class="detail-title">Gifts</h2>
+          <p>
+            With all that we have, we’ve been truly blessed.<br />
+            Your presence and prayers are all that we request.<br />
+            But if you desire to give nonetheless, a monetary gift is one we
+            suggest.
+          </p>
+        </div>
+
+        <!-- Snap & Share -->
+        <div class="detail-card">
+          <img src="images/snap.png" alt="Snap & Share" class="detail-icon" />
+          <h2 class="detail-title">Snap & Share</h2>
+          <p>
+            Oh Snap! Help us capture our Wedding Day!<br />
+            Use the Hashtag: #angelo&cellywedding2025
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- Gallery -->
-    <section id="gallery" class="section gallery">
-      <h2 class="section-title gallery-title">Our Gallery</h2>
-      <div class="container-carousel">
-        <div class="gallery-carousel">
-          <img
-            class="slides slide-1 active"
-            src="images/IMG_3977.jpg"
-            alt="Slide 1"
-          />
-          <img class="slides slide-2" src="images/IMG_0315.JPG" alt="Slide 2" />
-          <img class="slides slide-3" src="images/IMG_0290.JPG" alt="Slide 3" />
-          <!-- Controls -->
-          <a class="prev">&#10094;</a>
-          <a class="next">&#10095;</a>
+    <!-- Event -->
+    <section id="event" class="wedding-event-overlay">
+      <h2 class="event-title">Event</h2>
 
-          <!-- Dots -->
-          <div class="dots"></div>
-        </div>
+      <div class="event-grid">
+        <!-- Ceremony -->
+        <a
+          href="https://maps.google.com?q=St.+Michael+Parish+Church,+San+Jose,+Batangas"
+          target="_blank"
+          class="event-card"
+          style="background-image: url('images/st_joseph_the_worker.jpg')"
+        >
+          <div class="event-info">
+            <!-- <h3>Ceremony</h3> -->
+            <p>St. Michael Parish Church<br />San Jose, Batangas</p>
+            <span class="view-map">View Map</span>
+          </div>
+        </a>
+
+        <!-- Reception -->
+        <a
+          href="https://maps.google.com?q=Villa+Celina+Resort,+San+Jose,+Batangas"
+          target="_blank"
+          class="event-card"
+          style="background-image: url('images/casa_bella.jpg')"
+        >
+          <div class="event-info">
+            <!-- <h3>Reception</h3> -->
+            <p>Villa Celina Resort<br />San Jose, Batangas</p>
+            <span class="view-map">View Map</span>
+          </div>
+        </a>
       </div>
     </section>
 
-    <!-- Entourage -->
-    <!-- best man & matron of honor -->
-    <section id="entourage" class="section">
-      <div class="container">
-        <h2 class="section-title matron-bestman">Matron of Honor & Best Man</h2>
-        <div class="matron-bestman-grid">
-          <div class="matron-bestman-member">
-            <img
-              src="images/entourage/jucel_3.JPG"
-              alt="Matron of Honor"
-              class="member-photo"
-            />
-            <div class="member-name">Mrs. Jucel B. Gustilo</div>
-            <div class="member-role">Matron of Honor</div>
-          </div>
-          <div class="matron-bestman-member">
-            <img
-              src="images/entourage/no_image_male.png"
-              alt="Best Man"
-              class="member-photo"
-            />
-            <div class="member-name">Michael T. Samson</div>
-            <div class="member-role">Best Man</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Groomsmen and Bridesmaid -->
-      <div class="container">
-        <h2 class="section-title groomsmen-bridesmaid">
-          Bridesmaids & Groomsmen
-        </h2>
-        <div class="groomsmen-bridesmaid-grid">
-          <div class="groomsmen-bridesmaid-member">
-            <img
-              src="images/entourage/steph_edited.jpg"
-              alt="Maid of Honor"
-              class="member-photo"
-            />
-            <div class="member-name">Estephanie T. Samson</div>
-            <div class="member-role">Bridesmaid</div>
-          </div>
-          <div class="groomsmen-bridesmaid-member">
-            <img
-              src="images/entourage/no_image_male.png"
-              alt="Best Man"
-              class="member-photo"
-            />
-            <div class="member-name">Melquiades M. Colasito</div>
-            <div class="member-role">Groomsman</div>
-          </div>
-          <div class="groomsmen-bridesmaid-member">
-            <img
-              src="images/entourage/no_image_female.jpg"
-              alt="Bridesmaid"
-              class="member-photo"
-            />
-            <div class="member-name">Justine M. Punzalan</div>
-            <div class="member-role">Bridesmaid</div>
-          </div>
-          <div class="groomsmen-bridesmaid-member">
-            <img
-              src="images/entourage/no_image_male.png"
-              alt="Groomsman"
-              class="member-photo"
-            />
-            <div class="member-name">John M. Cari<span>&#xf1;</span>o</div>
-            <div class="member-role">Groomsman</div>
-          </div>
-          <div class="groomsmen-bridesmaid-member">
-            <img
-              src="images/entourage/joan_edited.jpg"
-              alt="Bridesmaid"
-              class="member-photo"
-            />
-            <div class="member-name">Joan O. Belmes</div>
-            <div class="member-role">Bridesmaid</div>
-          </div>
-          <div class="groomsmen-bridesmaid-member">
-            <img
-              src="images/entourage/no_image_male.png"
-              alt="Groomsman"
-              class="member-photo"
-            />
-            <div class="member-name">Don C. Mangalindan</div>
-            <div class="member-role">Groomsman</div>
-          </div>
-          <div class="groomsmen-bridesmaid-member">
-            <img
-              src="images/entourage/charm_edited.jpeg"
-              alt="Bridesmaid"
-              class="member-photo"
-            />
-            <div class="member-name">Charmain A. Cartagena</div>
-            <div class="member-role">Bridesmaid</div>
-          </div>
-          <div class="groomsmen-bridesmaid-member">
-            <img
-              src="images/entourage/kiko_2.jpg"
-              alt="Groomsman"
-              class="member-photo"
-            />
-            <div class="member-name">Francisco T. Munsayac</div>
-            <div class="member-role">Groomsman</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- light -->
-      <h2 class="section-title light">To Light our Way through Life</h2>
-      <div class="light-grid">
-        <div class="light-member">
-          <img
-            src="images/entourage/drae.jpeg"
-            alt="Maid of Honor"
-            class="member-photo"
-          />
-          <div class="member-name">Draeselle D. Gallego</div>
-          <!-- <div class="member-role">Matron of Honor</div> -->
-        </div>
-        <div class="light-member">
-          <img
-            src="images/entourage/no_image_male.png"
-            alt="Best Man"
-            class="member-photo"
-          />
-          <div class="member-name">Francis B. Sona</div>
-          <!-- <div class="member-role">Best Man</div> -->
-        </div>
-      </div>
-
-      <!-- clothe -->
-      <h2 class="section-title clothe">To Clothe Us in the Veil of Unity</h2>
-      <div class="clothe-grid">
-        <div class="clothe-member">
-          <img
-            src="images/entourage/no_image_female.jpg"
-            alt="Maid of Honor"
-            class="member-photo"
-          />
-          <div class="member-name">Mariekarr D. Bautista</div>
-          <!-- <div class="member-role">Matron of Honor</div> -->
-        </div>
-        <div class="clothe-member">
-          <img
-            src="images/entourage/micky_edited.jpg"
-            alt="Best Man"
-            class="member-photo"
-          />
-          <div class="member-name">Mark Christian S. Bautista</div>
-          <!-- <div class="member-role">Best Man</div> -->
-        </div>
-      </div>
-
-      <!-- bind -->
-      <h2 class="section-title bind">To Bind us in the Cord of Love</h2>
-      <div class="bind-grid">
-        <div class="bind-member">
-          <img
-            src="images/entourage/no_image_female.jpg"
-            alt="Maid of Honor"
-            class="member-photo"
-          />
-          <div class="member-name">Nerissa B. Mangalindan</div>
-          <!-- <div class="member-role">Matron of Honor</div> -->
-        </div>
-        <div class="bind-member">
-          <img
-            src="images/entourage/niek.jpg"
-            alt="Best Man"
-            class="member-photo"
-          />
-          <div class="member-name">Daniel C. Mangalindan</div>
-          <!-- <div class="member-role">Best Man</div> -->
-        </div>
-      </div>
-
-      <!-- Bearers -->
-      <h2 class="section-title bearers">Bearers</h2>
-      <div class="bearers-grid">
-        <div class="bearers-member">
-          <img
-            src="images/entourage/ali.jpg"
-            alt="coin bearer"
-            class="member-photo"
-          />
-          <div class="member-name">Mcalister A. Colasito</div>
-          <div class="member-role">Coin Bearer</div>
-        </div>
-        <div class="bearers-member">
-          <img
-            src="images/entourage/mon_2.jpeg"
-            alt="ring bearer"
-            class="member-photo"
-          />
-          <div class="member-name">Driton MonLewis D. Gallego</div>
-          <div class="member-role">Ring Bearer</div>
-        </div>
-        <div class="bearers-member">
-          <img
-            src="images/entourage/lei_2.jpeg"
-            alt="bible bearer"
-            class="member-photo"
-          />
-          <div class="member-name">Dmitri Lei D. Gallego</div>
-          <div class="member-role">Bible Bearer</div>
-        </div>
-        <div class="bearers-member">
-          <img
-            src="images/entourage/paul_2.JPG"
-            alt="flower girl"
-            class="member-photo"
-          />
-          <div class="member-name">Paul Umi Q. Cari<span>&#xf1;</span>o</div>
-          <div class="member-role">Flower Girl</div>
-        </div>
-        <div class="bearers-member">
-          <img
-            src="images/entourage/georgie_3.jpg"
-            alt="flower girl"
-            class="member-photo"
-          />
-          <div class="member-name">Georgie Q. Cari<span>&#xf1;</span>o</div>
-          <div class="member-role">Flower Girl</div>
-        </div>
-        <div class="bearers-member">
-          <img
-            src="images/entourage/tally_2.jpg"
-            alt="flower girl"
-            class="member-photo"
-          />
-          <div class="member-name">Maria Ataliah D. Bautista</div>
-          <div class="member-role">Flower Girl</div>
-        </div>
-        <div class="bearers-member bearers-last-image">
-          <img
-            src="images/entourage/amber.JPG"
-            alt="flower girl"
-            class="member-photo"
-          />
-          <div class="member-name">Amber Lexie B. Dela Paz</div>
-          <div class="member-role">Flower Girl</div>
-        </div>
-      </div>
-
-      <!-- Principal Sponsors -->
-      <div class="sponsors-section">
-        <h2 class="section-title sponsors">Principal Sponsors</h2>
-        <div class="sponsors-grid">
-          <div class="sponsor-name">Mr. & Mrs. Johnson</div>
-          <div class="sponsor-name">Mr. & Mrs. Williams</div>
-          <div class="sponsor-name">Mr. & Mrs. Brown</div>
-          <div class="sponsor-name">Mr. & Mrs. Davis</div>
-          <div class="sponsor-name">Mr. & Mrs. Miller</div>
-          <div class="sponsor-name">Mr. & Mrs. Wilson</div>
-          <div class="sponsor-name">Mr. & Mrs. Taylor</div>
-          <div class="sponsor-name">Mr. & Mrs. Anderson</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="wedding-details" class="details-section">
-      <div class="container">
-        <h2 class="section-title details-title">Wedding Details</h2>
-
-        <div class="details-container">
-          <div class="details-grid">
-            <!-- Attire Card -->
-            <div class="detail-card">
-              <div class="detail-icon">
-                <i class="fas fa-tshirt"></i>
-              </div>
-              <h3 class="detail-title">Attire</h3>
-              <div class="detail-content">
-                <p><strong>Formal Attire Requested</strong></p>
-                <p>Gentlemen: Suits or Tuxedos</p>
-                <p>Ladies: Evening Gowns or Cocktail Dresses</p>
-                <p>Color Palette: Gold, Navy, and Blush</p>
-              </div>
-            </div>
-
-            <!-- Gifts Card -->
-            <div class="detail-card">
-              <div class="detail-icon">
-                <i class="fas fa-gift"></i>
-              </div>
-              <h3 class="detail-title">Gifts</h3>
-              <div class="detail-content">
-                <p>Your presence is present enough!</p>
-                <p>
-                  For those who wish to contribute, we have a honeymoon
-                  registry.
-                </p>
-                <a
-                  href="#"
-                  style="color: var(--sage-green); text-decoration: underline"
-                  >View Registry</a
-                >
-              </div>
-            </div>
-
-            <!-- Snap & Share Card -->
-            <div class="detail-card">
-              <div class="detail-icon">
-                <i class="fas fa-camera-retro"></i>
-              </div>
-              <h3 class="detail-title">Snap & Share</h3>
-              <div class="detail-content">
-                <p>Help us capture every special moment!</p>
-                <p>Use our wedding hashtag when sharing photos:</p>
-                <div class="hashtag">#SarahAndMichael2025</div>
-                <div class="social-icons">
-                  <a href="#"><i class="fab fa-instagram"></i></a>
-                  <a href="#"><i class="fab fa-facebook"></i></a>
-                  <a href="#"><i class="fab fa-twitter"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Events Section -->
-    <section id="events" class="events-section section">
-      <div class="container">
-        <h2 class="section-title">Wedding Events</h2>
-
-        <!-- Ceremony Event -->
-        <div class="event-item">
-          <div class="event-image">
-            <img src="images/st_joseph_the_worker.jpg" alt="Wedding Ceremony" />
-          </div>
-          <div class="event-details">
-            <div class="event-time">3:00 PM</div>
-            <h3 class="event-title">Ceremony</h3>
-            <div class="event-location">
-              St. Joseph The Worker Parish, Gladiola Street, Greenland Executive
-              Village, Cainta, Philippines, 1920
-            </div>
-            <p class="event-description">
-              Join us as we exchange vows and become husband and wife in this
-              beautiful historic cathedral.
+    <section id="faq" class="faq-section">
+      <h2 class="faq-title">Frequently Asked Questions</h2>
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question">Can I bring a guest?</button>
+          <div class="faq-answer">
+            <p>
+              We've chosen to share our special day with limited number of loved
+              ones. If you're formally invited, you'll receive a unique RSVP
+              code. Please use it to respond. If you've been allotted a plus
+              one, kindly include their name when RSVPing.
             </p>
-            <a
-              href="https://maps.app.goo.gl/PH7s7y5LPRRa2tDs9"
-              target="_blank"
-              class="map-button"
-            >
-              <i class="fas fa-map-marker-alt"></i> View on Map
-            </a>
           </div>
         </div>
-
-        <!-- Reception Event -->
-        <div class="event-item">
-          <div class="event-image">
-            <img src="images/casa_bella.jpg" alt="Wedding Reception" />
-          </div>
-          <div class="event-details">
-            <div class="event-time">5:30 PM</div>
-            <h3 class="event-title">Reception</h3>
-            <div class="event-location">
-              Casa Bella Events Place, 14 Neptune Street, Tancingco Subdivision
-              Taytay, Rizal
-            </div>
-            <p class="event-description">
-              Dinner, dancing, and celebration! Join us for an unforgettable
-              evening of joy and festivity.
+        <div class="faq-item">
+          <button class="faq-question">Are kids invited?</button>
+          <div class="faq-answer">
+            <p>
+              We love your little ones! However, with the exception of the
+              wedding party, we have decided to keep our wedding adults-only.
             </p>
-            <a
-              href="https://maps.app.goo.gl/p2UqkiNHqzSbFjJNA"
-              target="_blank"
-              class="map-button"
-            >
-              <i class="fas fa-map-marker-alt"></i> View on Map
-            </a>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Is there parking available?</button>
+          <div class="faq-answer">
+            <p>
+              Yes! Ample parking spaces available at both the church and the
+              reception venue.
+            </p>
           </div>
         </div>
       </div>
     </section>
+    <footer class="wedding-footer">
+      <div class="footer-container">
+        <!-- Left -->
+        <div class="footer-details">
+          <h4>Ceremony</h4>
+          <p>
+            St. Joseph The Worker Parish<br />
+            Gladiola Street, Greenland Executive Village, Cainta, Philippines,
+            1920
+          </p>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <p>We can't wait to celebrate with you!</p>
-        <p>December 26, 2025</p>
+          <h4>Reception</h4>
+          <p>
+            Casa Bella Events Place, 14 Neptune Street<br />
+            ancingco Subdivision Taytay, Rizal
+          </p>
+        </div>
+
+        <!-- Middle Logo -->
+        <div class="footer-logo">
+          <img src="images/logo_white.png" alt="Wedding Logo" />
+        </div>
+
+        <!-- Right Contact -->
+        <div class="footer-contact">
+          <h4>Got questions? You may contact us at:</h4>
+          <p>
+            <img src="images/fb_2.svg" alt="" /> Angelo Samson<br />
+            <span class="username">gelosamson</span>
+          </p>
+          <p>
+            <img src="images/insta_2.svg" alt="" /> Celly Betangcol<br />
+            <span class="username">cellybetangcol</span>
+          </p>
+          <p><img src="images/phone_num.svg" alt="" /> +63 956 510 6867</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>All rights reserved.</p>
       </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
